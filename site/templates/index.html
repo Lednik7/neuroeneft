@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block head %}
-<link rel="stylesheet" href="/static/css/base.css">
+<link rel="stylesheet" href="/static/css/main.css">
 <script src="/static/js/TweenMax.min.js"></script>
 <script src="/static/js/EasePack.min.js"></script>
 <script src="/static/js/sitehere-animation.js"></script>
@@ -10,4 +10,23 @@
 
 
 {% block content %}
+<div class="fullscreen-bg">
+    <div class="overlay">
+        <h1>KSA - Прогноз стоимости<br>нефти Brent</h1>
+        <a href="" style="margin-left: 48vw; margin-top: 2vw" id="go-page-2" class="go-page">Рассчитать</a>
+    </div>
+    <video loop="" muted="" autoplay="" poster="" class="fullscreen-bg__video">
+        <source src="../static/media/video/2.mp4" type="video/mp4">
+    </video>
+</div>
+
+<!-- ############################################# -->
+<!-- Коротко о главном (Краткий тезис о художнике -->
+<!-- ############################################# -->
+<a name="about-the-artist"></a>
+<section class="container-about-the-artist">
+    <div class="artist-title">Коротко о главном</div>
+    <p class="about-the-artist"> «Нейронефть» — это онлайн-хакатон, который пройдёт в рамках Тюменского Нефтегазового Форума с 18 по 22 сентября. Здесь ты и твоя команда за 5 дней должны будете создать программный продукт, предсказывающий курс нефти. И всё это, чтобы стать победителем и разделить призовой фонд в размере 850 000 рублей. </p>
+</section>
+
 {% endblock %}
