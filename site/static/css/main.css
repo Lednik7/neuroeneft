@@ -227,4 +227,11 @@ rect {
         margin-left: -35vw;
         margin-top: 240px;
     }
+
+    .ui-datepicker-trigger {
+        margin-left: 5px;
+        position: relative;
+        top: 3px;
+        cursor: pointer;
+    }
 }
