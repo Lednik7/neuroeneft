@@ -104,7 +104,7 @@
   color: #3a3a3a;
   cursor: pointer;
   display: block;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 45px;
   max-width: 160px;
@@ -184,4 +184,47 @@ rect {
     width: 100%;
     height: 70vw;
     margin-top: 10vw;
+}
+
+.chart-img {
+    margin-left: 10vw;
+}
+
+.img-pos {width: 80%;}
+@media screen and (max-width: 767px) {
+    .btn {
+        max-width: 80px;
+        width: 100%;
+    }
+    .btn-1:hover {
+        background: white;
+        font-weight: 900;
+        font-size: 0.8rem;
+    }
+
+}
+
+@media screen and (max-width: 645px) {
+    #price-text {
+        font-weight: 900;
+        letter-spacing: 1px;
+        line-height: 25px;
+        left: 35vw;
+        margin-top: -195px;
+    }
+
+    #price {
+        left: 35vw;
+        margin-top: -5px;
+    }
+    #background-chart {
+        width: 100%;
+        height: 120vw;
+    }
+
+    .img-pos {
+        width: 80vw;
+        margin-left: -35vw;
+        margin-top: 240px;
+    }
 }

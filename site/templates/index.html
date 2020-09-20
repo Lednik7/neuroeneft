@@ -6,7 +6,7 @@
 <!-- 1. Подключить CSS-файл Bootstrap 3 -->
 <link rel="stylesheet" href="css/bootstrap.min.css"/>
 <!-- 2. Подключить CSS-файл библиотеки Bootstrap 3 DateTimePicker -->
-<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" />
+<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css"/>
 
 <!-- 3. Подключить библиотеку jQuery -->
 <script src="js/jquery.min.js"></script>
@@ -37,34 +37,44 @@
 <a name="about-the-artist"></a>
 <section class="container-about-the-artist">
     <div class="artist-title">Коротко о главном</div>
-    <p class="about-the-artist"> «Нейронефть» — это онлайн-хакатон, который пройдёт в рамках Тюменского Нефтегазового Форума с 18 по 22 сентября. Здесь ты и твоя команда за 5 дней должны будете создать программный продукт, предсказывающий курс нефти. И всё это, чтобы стать победителем и разделить призовой фонд в размере 850 000 рублей. </p>
+    <p class="about-the-artist"> «Нейронефть» — это онлайн-хакатон, который пройдёт в рамках Тюменского Нефтегазового
+        Форума с 18 по 22 сентября. Здесь ты и твоя команда за 5 дней должны будете создать программный продукт,
+        предсказывающий курс нефти. И всё это, чтобы стать победителем и разделить призовой фонд в размере 850 000
+        рублей. </p>
 </section>
 
-<section id="background-chart" >
-    <a href="" class="btn btn-1" style="margin-left: 10vw; margin-bottom: 1vw">
-        <svg>
-            <rect x="0" y="0" fill="none" width="100%" height="100%"/>
-        </svg>
-        3 дня
-    </a>
-    <a style="margin-left: 10vw; margin-bottom: 1vw" href="" class="btn btn-1">
-        <svg>
-            <rect x="0" y="0" fill="none" width="100%" height="100%"/>
-        </svg>
-        Неделя
-    </a>
-    <a style="margin-left: 10vw; margin-bottom: 1vw" href="" class="btn btn-1">
-        <svg>
-            <rect x="0" y="0" fill="none" width="100%" height="100%"/>
-        </svg>
-        Месяц
-    </a>
+<section id="background-chart" style="display: grid; grid-template-columns: 0.4fr 1.6fr;">
+    <div>
+        <a href="" class="btn btn-1" style="margin-left: 10vw; margin-bottom: 1vw">
+            <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+            </svg>
+            3 дня
+        </a>
+        <a style="margin-left: 10vw; margin-bottom: 1vw" href="" class="btn btn-1">
+            <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+            </svg>
+            Неделя
+        </a>
+        <a style="margin-left: 10vw; margin-bottom: 1vw" href="" class="btn btn-1">
+            <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+            </svg>
+            Месяц
+        </a>
 
-    <a style="margin-left: 10.5vw; margin-bottom: 1vw" id="price-text">
-        Цена на 24.10
-    </a>
-    <a style="margin-left: 10.5vw; margin-bottom: 1vw" id="price">
-        38.0$
-    </a>
+        <a style="margin-left: 10.5vw; margin-bottom: 1vw" id="price-text">
+            Цена на 24.10
+        </a>
+        <a style="margin-left: 10.5vw; margin-bottom: 1vw" id="price">
+            38.0$
+        </a>
+    </div>
+    <div>
+        <div class="chart-img">
+            <img class="img-pos" src="../static/media/image/1.jpg">
+        </div>
+    </div>
 </section>
 {% endblock %}

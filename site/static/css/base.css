@@ -155,6 +155,11 @@ header {
         display: flex;
     }
 
+    .brand {
+        padding-top: 10px;
+        padding-left: 45px;
+    }
+
     #ul-base {
         display: inline-block;
         width: 100vw;
