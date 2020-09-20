@@ -1,0 +1,1 @@
+$('#datetimepicker').data("DateTimePicker").FUNCTION();
