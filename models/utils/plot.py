@@ -8,12 +8,12 @@ def plot(df, fcst, n=7, xlabel='Дата', ylabel='Цена', figsize=(10, 6)):
     P.S. Лучше не пытайся разбирать код, я сам хз))
     """
     
-    df = df[-31:]
-    fcst = fcst[-31:]
+    df = df[-100:]
+    fcst = fcst[-100:]
 
     df['ds'] = fcst["ds"].to_list()
 
-    df = df[-31:-n]
+    df = df[-(24+n):-n]
     fcst = fcst[-n:]
     temp = [df.iloc[-1], fcst.iloc[0]]
     
