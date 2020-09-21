@@ -8,6 +8,14 @@ from flask import Flask, render_template
 df = pd.read_csv("models/data.csv")
 pkl_path = "models/Prophet.pkl"
 
+
+
+
+logging.basicConfig(level=logging.ERROR)
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'DFDVfvfd5fdxv5565856gfbgfbgvbmLKJLGUIl5tfh5ghTHRGHFGHfg985248202h0tgsfd'
+
+
 def create_plot(n, df, pkl_path, save_path=False):
     """
     create_plot(7, df, pkl_path, "save_path")
@@ -18,15 +26,6 @@ def create_plot(n, df, pkl_path, save_path=False):
     if save_path:
         figure.savefig(save_path)
     return figure
-
-
-
-
-
-logging.basicConfig(level=logging.ERROR)
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'DFDVfvfd5fdxv5565856gfbgfbgvbmLKJLGUIl5tfh5ghTHRGHFGHfg985248202h0tgsfd'
-
 
 # /////////////////
 # ГЛАВНАЯ СТРАНИЦА

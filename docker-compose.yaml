@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  neuroeneft:
+    container_name: neuroeneft
+    build: .
+    restart: always
+    ports:
+      - 8000:8000
