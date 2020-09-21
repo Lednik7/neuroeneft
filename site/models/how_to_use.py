@@ -2,7 +2,7 @@
 import pickle
 import pandas as pd
 
-pkl_path = "./Prophet.pkl"
+pkl_path = "Prophet.pkl"
 
 with open(pkl_path, 'rb') as f:
     model = pickle.load(f)
