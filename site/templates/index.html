@@ -42,19 +42,19 @@
 
 <section id="background-chart" style="display: grid; grid-template-columns: 0.4fr 1.6fr;">
     <div>
-        <a id="click_3day" class="btn btn-1" style="margin-left: 10vw; margin-bottom: 2vw">
+        <a id="click_3day" class="btn btn-1" style="margin-left: 10vw; margin-top: 1vw; margin-bottom: 1vw">
             <svg>
                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
             </svg>
             3 дня
         </a>
-        <a id="click_week" style="margin-left: 10vw; margin-bottom: 2vw" class="btn btn-1">
+        <a id="click_week" style="margin-left: 10vw; margin-bottom: 1vw; margin-top: 1vw" class="btn btn-1">
             <svg>
                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
             </svg>
             Неделя
         </a>
-        <a id="click_month" style="margin-left: 10vw; margin-bottom: 2vw" class="btn btn-1">
+        <a id="click_month" style="margin-left: 10vw; margin-bottom: 1vw; margin-top: 1vw" class="btn btn-1">
             <svg>
                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
             </svg>
@@ -79,20 +79,24 @@
     <div class="row">
         <div class='col-sm-6'>
             <div class="form-group">
-                <div class='input-group date' id="datepicker">
-                    <input type='text' class="form-control"/>
+                <div class='input-group date'>
+                    <input type="text" id="datepicker">
 
+                    <script>
+                        $(function(){
+                            $("#datepicker").datepicker();
+                        });
+                    </script>
                 </div>
             </div>
         </div>
-
-        <script>
-            $(function(){
-                $("#datepicker").datepicker();
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker2').datetimepicker({
+                    locale: 'ru'
+                });
             });
-
         </script>
     </div>
 </div>
-
 {% endblock %}

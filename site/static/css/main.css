@@ -120,7 +120,7 @@
     font-weight: 100;}
 
 svg {
-    height: 57px;
+    height: 45px;
     left: 0;
     position: absolute;
     top: 0;
@@ -210,7 +210,7 @@ rect {
         letter-spacing: 1px;
         line-height: 25px;
         left: 35vw;
-        margin-top: -195px;
+        margin-top: -105px;
     }
 
     #price {
@@ -224,7 +224,7 @@ rect {
 
     .img-pos {
         width: 80vw;
-        margin-left: -35vw;
+        margin-left: -25vw;
         margin-top: 240px;
     }
 
@@ -233,5 +233,14 @@ rect {
         position: relative;
         top: 3px;
         cursor: pointer;
+    }
+}
+
+
+@media screen and (max-width: 645px) {
+    .img-pos {
+        width: 80vw;
+        margin-left: -30vw;
+        margin-top: 240px;
     }
 }
