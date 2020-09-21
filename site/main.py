@@ -5,8 +5,8 @@ from models.utils.pred_model import predictive_model
 from flask import Flask, render_template, jsonify
 
 
-df = pd.read_csv("models/data.csv")
-pkl_path = "models/Prophet.pkl"
+df = pd.read_csv("../models/data.csv")
+pkl_path = "../models/Prophet.pkl"
 
 
 def create_plot(n, df, pkl_path, save_path=False):
