@@ -14,7 +14,7 @@ last_date = df["ds"][-1:].values
 now_date = "2020-10-19"
 delta = pd.to_datetime(now_date) - pd.to_datetime(last_date)
 periods = delta.days[0]
-
+    
 future = model.make_future_dataframe(periods=periods)
 future.tail()
 

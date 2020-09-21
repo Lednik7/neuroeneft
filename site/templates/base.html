@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+Pro&display=swap" >
+    <link rel="stylesheet" href="../static/css/base.css">
+    <script src="../static/js/base.js"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="/static/fonts/News706_BT_Bold.ttf" as="font" type="font/ttf" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    {% block head %}{% endblock %}
+</head>
+<body>
+<header>
+    <!-- ###################### -->
+    <!-- Навигация по сайту -->
+    <!-- ###################### -->
+    <nav id="nav-base">
+        <!-- Логотип -->
+        <a href="/" class="a-none-decor"><div class="brand">
+            <div class="logo"></div>
+            <div class="word-mark">KSA</div>
+        </div></a>
+
+        <!-- Навигация по сайту (Когда экран меньше 767px)-->
+        <div id="menu">
+            <div id="menu-toggle">
+                <div id="menu-icon">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+
+            <!-- Навигация по сайту (Когда экран больше 767px) -->
+            <ul id="ul-base">
+                <li class="li-base"><a href="/">Получить прогноз</a></li>
+                <li class="li-base"><a href="/">Визуалицайия</a></li>
+                <li class="li-base"><a href="/">О нас</a></li>
+
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="body_center">
+    {% block content %}{% endblock %}
+</div>
+
+<!-- ###################### -->
+<!-- Концовка сайта -->
+<!-- ###################### -->
+<div id="end-base">
+    <!-- Логотип -->
+    <div class="brand" style="justify-content: center; padding-top: 3%">
+        <div class="logo"></div>
+        <div class="word-mark">KSA</div>
+    </div>
+    <hr>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; margin: 2% 15% 0;">
+        <a href="/" class="a-none-decor a-base" style="color: white;">Немного о нас</a>
+        <a href="https://yandex.ru/maps/55/tyumen/search/%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F%2C%20%D0%A2%D1%8E%D0%BC%D0%B5%D0%BD%D1%8C/?ll=65.545912%2C57.137405&sll=65.534328%2C57.153033&source=wizgeo&utm_medium=maps-desktop&utm_source=serp&z=10"
+           class="a-none-decor a-base" style="color: #1d7ebd;">г. Тюмень</a>
+        <a href="https://oilgasforum.ru/" class="a-none-decor a-base" style="color: white">Тюменский Нефтегазовый Форум</a>
+    </div>
+
+    <!-- Ссылки на соц.сети -->
+    <div id="a-end-base">
+        <a href="#" class="a-none-decor" style="font-size: 1.5em;
+                                                        color:white;
+                                                        padding-right: 10px"><i class="fa fa-instagram"></i></a>
+        <a href="" class="a-none-decor" style="font-size: 1.5em;
+                                                        color:white;
+                                                        padding-left: 10px;
+                                                        padding-right: 10px"><i class="fa fa-vk"></i></a>
+        <a href="" class="a-none-decor" style="font-size: 1.5em;
+                                                        color:white;
+                                                        padding-left: 10px;
+                                                        padding-right: 10px"><i class="fa fa-envelope-o"></i></a>
+        <a href="tel:" class="a-none-decor" style="font-size: 1.5em;
+                                                        color:white;
+                                                        padding-left: 10px;"><i class="fa fa-phone"></i></a>
+    </div>
+
+    <!-- От авторов -->
+    <div id = "copyright" style="font-family: 'Montserrat', sans-serif;
+                        color: aliceblue;
+                        font-size: .8vw;
+                        padding-top: 5%;
+                        padding-bottom: 5%;
+                        text-align: center;"></div>
+</div>
+</body>
+</html>
