@@ -27,6 +27,17 @@ window.onload = function() {
             }
         });
     });
+
+    document.getElementById('predict_date').addEventListener('click', function (e) {
+        $.ajax({
+            url: "http://0.0.0.0:10000/pred",
+            data: {date: document.getElementById('datepicker').value},
+            context: document.body,
+            success: function(data){
+                document.getElementById('price_date').innerText = data['price'];
+            }
+        });
+    });
 };
 
 $(function(){

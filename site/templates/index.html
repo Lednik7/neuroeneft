@@ -44,16 +44,16 @@
 
 
         <a style="margin-left: 10.5vw; margin-bottom: 1vw   ; margin-top: 2vw" id="price-text">
-            прогноз на 24.10
+            {{ tomorrow_date }}
         </a>
         <a style="margin-left: 10.5vw; margin-bottom: 1vw" class="price">
-            38.0$
+            {{ tomorrow_pred }}
         </a>
 
         <div id="title-text">Предсказание на дату</div>
         <div class="form-group">
             <div style="margin-left: 11vw; margin-top: 1.2vw" class='input-group date'>
-                <input type="text" id="datepicker">
+                <input type="text" id="datepicker" value= {{ tomorrow_date }}>
 
                 <script>
                     $(function(){
@@ -70,13 +70,16 @@
             });
         </script>
         <div style="display: grid; grid-template-columns: 1fr 0.5fr; margin-left: 11vw; margin-right: 11vw">
-            <div>
-                <a href="#" class="a-none-decor">
-                    <a href="" style="" class="go-page go-page-2">Предсказать</a></a>
-            </div>
+            <a id="predict_date" style="margin-left: 4vw; margin-bottom: 1vw; margin-right: 3vw; margin-top: 1vw" class="btn btn-1">
+                <svg>
+                    <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+                </svg>
+                Предсказать
+            </a>
+
             <div style="margin-top: 1.2vw; margin-right: 3vw; margin-left: 3vw;}">
-                <a class="price">
-                    38.0$
+                <a class="price" id = "price_date">
+                    {{ tomorrow_pred }}
                 </a>
             </div>
         </div>
