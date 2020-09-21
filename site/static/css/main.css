@@ -4,7 +4,7 @@
     position: relative;
     height: 100%;
     width: 100%;
-    padding-top:45%;
+    padding-top: 45%;
 }
 
 .fullscreen-bg__video {
@@ -13,24 +13,27 @@
     left: 0;
     width: 100%;
 }
+
 .overlay {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     z-index: 4;
 }
+
 .overlay h1 {
-    text-align:center;
-    color:#fff;
+    text-align: center;
+    color: #fff;
     font-size: 4vw;
-    margin-top:17%;
+    margin-top: 17%;
     margin-right: 40vw;
     margin-left: 10vw;
-    font-family:  "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
+
 .go-page {
     color: white;
     display: inline-block;
@@ -47,10 +50,11 @@
     font-size: 1.7vw;
     line-height: 1.5;
     border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     margin-top: 1vw;
     margin-bottom: 3vw;
 }
+
 #go-page-2 {
     text-decoration: none !important;
     background-color: #ffa24c;
@@ -101,23 +105,23 @@
 
 
 .btn {
-  color: #3a3a3a;
-  cursor: pointer;
-  display: block;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 45px;
-  max-width: 160px;
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  width: 100%;}
-
+    color: #3a3a3a;
+    cursor: pointer;
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 45px;
+    max-width: 160px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+}
 
 
 .btn-1 {
-    background: white;
-    font-weight: 100;}
+        font-weight: 100;
+}
 
 svg {
     height: 45px;
@@ -137,27 +141,33 @@ rect {
 
 #price-text {
     color: #3a3a3a;
-    cursor: pointer;
     display: block;
     font-size: 16px;
-    line-height: 45px;
-    max-width: 160px;
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
     width: 100%;
-    background: white;
     font-weight: 900;
+    letter-spacing: 1px;
+}
+
+#title-text {
+    margin-left: 11vw;
+    margin-top: 3vw;
+    color: #3a3a3a;
+    display: block;
+    font-size: 10px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    font-weight: 500;
     letter-spacing: 1px;
 }
 
 #price {
     color: #eb5e3e;
-    cursor: pointer;
-    display: block;
     font-size: 2rem;
-    line-height: 45px;
-    max-width: 160px;
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
@@ -174,28 +184,28 @@ rect {
 }
 
 .btn-1:hover rect {
-        stroke-width: 5;
-        stroke-dasharray: 15, 310;
-        stroke-dashoffset: 48;
-        transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
-    }
+    stroke-width: 5;
+    stroke-dasharray: 15, 310;
+    stroke-dashoffset: 48;
+    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
 
 #background-chart {
     width: 100%;
-    height: 70vw;
+    height: 40vw;
     margin-top: 10vw;
 }
 
-.chart-img {
-    margin-left: 10vw;
+.img-pos {
+    width: 80%;
 }
 
-.img-pos {width: 80%;}
 @media screen and (max-width: 767px) {
     .btn {
         max-width: 80px;
         width: 100%;
     }
+
     .btn-1:hover {
         background: white;
         font-weight: 900;
@@ -205,18 +215,12 @@ rect {
 }
 
 @media screen and (max-width: 645px) {
-    #price-text {
-        font-weight: 900;
-        letter-spacing: 1px;
-        line-height: 25px;
-        left: 35vw;
-        margin-top: -105px;
-    }
+
 
     #price {
-        left: 35vw;
         margin-top: -5px;
     }
+
     #background-chart {
         width: 100%;
         height: 120vw;
@@ -224,8 +228,8 @@ rect {
 
     .img-pos {
         width: 80vw;
-        margin-left: -25vw;
-        margin-top: 240px;
+        margin-left: -45vw;
+        margin-top: 180px;
     }
 
     .ui-datepicker-trigger {
@@ -233,14 +237,30 @@ rect {
         position: relative;
         top: 3px;
         cursor: pointer;
+        margin-top: 100px;
     }
+
+    .btn-pos {
+        margin-left: -37vw;
+    }
+
 }
 
 
-@media screen and (max-width: 645px) {
+@media screen and (max-width: 340px) {
     .img-pos {
         width: 80vw;
-        margin-left: -30vw;
-        margin-top: 240px;
+        margin-left: -60vw;
+        margin-top: 150px;
     }
+    .btn-pos {
+        margin-left: -60vw;
+    }
+}
+
+.container-get_forecast {
+    margin-top: 4vw;
+    border: 100px;
+    padding-left: 10%;
+    padding-right: 10%;
 }
