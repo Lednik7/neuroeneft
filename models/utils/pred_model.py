@@ -1,6 +1,27 @@
 import pickle
 import pandas as pd
-from datetime import datetime
+from datetime import date, timedelta, datetime
+import calendar
+
+def next_date(n):
+  """
+  n принимает значения соотвктствующие:
+  days - 3 дня
+  week - 7 дней
+  month - месяц
+  """
+  today = date.today()
+  if n == "days":
+    days = 3
+  elif n == "week":
+    days = 7
+  elif n == "month":
+    days = calendar.monthrange(today.year, today.month)[1]
+  else:
+    current_datetime = datetime.now().date() # дата в системе
+    return pd.to_timedelta(f"{n} days") + pd.to_datetime(current_datetime)
+  next_month_date_ = today + timedelta(days=days)
+  return pd.to_datetime(next_month_date_)
 
 class predictive_model():
   """
@@ -12,6 +33,11 @@ class predictive_model():
   week = model.plot_for_weekend() #возвращает forecast(предсказание)
   model.plot() #строит грфик и возращает его
   model.plot_components() #строит грфик и возращает его
+
+  input_date = "2020-10-14"
+  model = predictive_model(df).load_pickle()
+  model.set_periods(input_date)
+  forecast = model.plot_for_n("days")
   """
   def __init__(self, data):
     self.model = None #модель
@@ -50,19 +76,18 @@ class predictive_model():
     self.pred_price = self.forecast["yhat"][-1:].values[0] #предсказание на заданный день
     return self.pred_price
 
-  def plot_for_weekend(self):
+  def plot_for_n(self, n):
     self.last_date = self.data["ds"][-1:].values # последняя дата записи в данных
-    current_datetime = datetime.now().date() # дата в системе
-    delta = pd.to_timedelta("7 days") + pd.to_datetime(current_datetime) - pd.to_datetime(self.last_date) # кол-во дней для предсказания на 7 дней вперед
+    delta = next_date(n) - pd.to_datetime(self.last_date) # кол-во дней для предсказания на n дней вперед
     self.future = self.model.make_future_dataframe(periods=delta.days[0]) # создание датафрейма для предсказания
-    self.forecast = self.model.predict(future) # само предсказание
+    self.forecast = self.model.predict(self.future) # само предсказание
     return self.forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper', "trend"]]
 
-  def save_model(self, pr_path="./Prophet.pkl", frcst_path="./forecast.pkl"): #сохраняем файлы модели
+  def save_model(self, pkl_path="./Prophet.pkl", frcst_path="./forecast.pkl"): #сохраняем файлы модели
     with open(pkl_path, "wb") as f:
       pickle.dump(self.model, f)
 
-    self.forecast.to_pickle(fcrst_path)
+    self.forecast.to_pickle(frcst_path)
 
   def plot(self, save=False, path="./figure.jpeg"): #график
     fig = self.model.plot(self.forecast)
