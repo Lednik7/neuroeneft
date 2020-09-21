@@ -1,6 +1,27 @@
 import pickle
 import pandas as pd
-from datetime import datetime
+from datetime import date, timedelta, datetime
+import calendar
+
+def next_date(n):
+  """
+  n принимает значения соотвктствующие:
+  days - 3 дня
+  week - 7 дней
+  month - месяц
+  """
+  today = date.today()
+  if n == "days":
+    days = 3
+  elif n == "week":
+    days = 7
+  elif n == "month":
+    days = calendar.monthrange(today.year, today.month)[1]
+  else:
+    current_datetime = datetime.now().date() # дата в системе
+    return pd.to_timedelta(f"{n} days") + pd.to_datetime(current_datetime)
+  next_month_date_ = today + timedelta(days=days)
+  return pd.to_datetime(next_month_date_)
 
 
 class predictive_model():
@@ -66,6 +87,7 @@ class predictive_model():
             pickle.dump(self.model, f)
 
         self.forecast.to_pickle(pkl_path)
+
 
     def plot(self, save=False, path="./figure.jpeg"):  # график
         fig = self.model.plot(self.forecast)

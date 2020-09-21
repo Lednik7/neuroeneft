@@ -8,14 +8,22 @@ def plot(df, fcst, n=7, xlabel='Дата', ylabel='Цена', figsize=(10, 6)):
     fcst(forecast) - предсказание модели
     P.S. Лучше не пытайся разбирать код, я сам хз))
     """
+    
+    df = df[-100:]
+    fcst = fcst[-100:]
+
     df['ds'] = fcst["ds"].to_list()
-    df = df[-31:-n]
+
+    df = df[-(24+n):-n]
     fcst = fcst[-n:]
     temp = [df.iloc[-1], fcst.iloc[0]]
+
     temp2 = pd.DataFrame({"ds": [temp[0]["ds"], temp[1]["ds"]], "y": [temp[0]["y"], temp[1]["yhat"]]})
+
     fig = plt.figure(facecolor='w', figsize=figsize)
     ax = fig.add_subplot(111)
     fig = ax.get_figure()
+    
 
     ax.plot(df['ds'].dt.to_pydatetime(), df['y'], '-', c="#0072B2")
 
