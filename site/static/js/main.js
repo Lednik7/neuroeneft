@@ -4,7 +4,7 @@ window.onload = function() {
             url: "http://0.0.0.0:10000/calc/3",
             context: document.body,
             success: function(){
-                document.getElementById('img_src').src='static/media/image/3.png';
+                document.getElementById('img_src').src='../static/media/image/3.png';
             }
         });
     });
@@ -13,7 +13,7 @@ window.onload = function() {
             url: "http://0.0.0.0:10000/calc/7",
             context: document.body,
             success: function(){
-                document.getElementById('img_src').src='static/media/image/7.png';
+                document.getElementById('img_src').src='../static/media/image/7.png';
             }
         });
     });
@@ -23,7 +23,7 @@ window.onload = function() {
             url: "http://0.0.0.0:10000/calc/30",
             context: document.body,
             success: function(){
-                document.getElementById('img_src').src='static/media/image/30.png';
+                document.getElementById('img_src').src='../static/media/image/30.png';
             }
         });
     });

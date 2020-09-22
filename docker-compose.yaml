@@ -3,7 +3,13 @@ version: "3"
 services:
   neuroeneft:
     container_name: neuroeneft
-    build: .
+    build: ./neuroeneft
     restart: always
     ports:
       - 10000:10000
+    volumes:
+      - ./neuroeneft/app.log:/usr/src/app/app.log
+      - ./neuroeneft/logs/gunicorn-access.log:/var/log/gunicorn/gunicorn-access$
+      - ./neuroeneft/logs/gunicorn-error.log:/var/log/gunicorn/gunicorn-error.l$
+      - ./neuroeneft/site/static/:/usr/src/app/static/
+    command: gunicorn --workers 3 --bind  0.0.0.0:5000 --access-logfile /var/log/gunicorn/gunicorn-access.log --error-logfile /var/log/gunicorn/gunicorn-error.log wsgi:app
