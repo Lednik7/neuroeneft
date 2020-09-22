@@ -1,13 +1,42 @@
 window.onload = function() {
     document.getElementById('click_3day').addEventListener('click', function (e) {
-        alert("1")
+        $.ajax({
+            url: "/calc/3",
+            context: document.body,
+            success: function(){
+                document.getElementById('img_src').src='../static/media/image/3.png';
+            }
+        });
     });
     document.getElementById('click_week').addEventListener('click', function (e) {
-        alert("2")
+        $.ajax({
+            url: "/calc/7",
+            context: document.body,
+            success: function(){
+                document.getElementById('img_src').src='../static/media/image/7.png';
+            }
+        });
     });
 
     document.getElementById('click_month').addEventListener('click', function (e) {
-        alert("3")
+        $.ajax({
+            url: "/calc/30",
+            context: document.body,
+            success: function(){
+                document.getElementById('img_src').src='../static/media/image/30.png';
+            }
+        });
+    });
+
+    document.getElementById('predict_date').addEventListener('click', function (e) {
+        $.ajax({
+            url: "/pred",
+            data: {date: document.getElementById('datepicker').value},
+            context: document.body,
+            success: function(data){
+                document.getElementById('price_date').innerText = data['price'];
+            }
+        });
     });
 };
 
